@@ -5,7 +5,6 @@ export type UserDocument = Document & {
   firstName: string
   lastName: string
   email: string
-  gender: 'male' | 'female'
   isAdmin: boolean
   password: string
 }
@@ -26,14 +25,8 @@ const userSchema = new mongoose.Schema({
     required: true,
     index: true,
   },
-  gender: {
-    type: String,
-    enum: ['male', 'female'],
-    required: true,
-  },
   password: {
     type: String,
-    required: true,
   },
   isAdmin: {
     type: Boolean,

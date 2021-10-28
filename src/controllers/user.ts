@@ -54,3 +54,9 @@ export const deleteUser = async (req: Request, res: Response) => {
   const user = await UserService.deleteUser(userId)
   res.json(user)
 }
+
+export const loginUser = async (req: Request, res: Response) => {
+  console.log('user Controller', req.user)
+  res.json(req.user)
+  res.send('Login Sucess')
+}
